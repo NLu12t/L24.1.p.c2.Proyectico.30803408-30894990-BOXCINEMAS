@@ -16,11 +16,11 @@ export default class Cl_Controlador {
         this.vFamilia.ocultar()
         this.vCinesUnidos.mostrar()
     }
-    agregarFamilia({ apellidoFamilia, cantPersonas, dia }){
-        let familia = new Cl_mFamilia({apellidoFamilia, cantPersonas, dia})
+    agregarFamilia({ apellido, cantPersonas, dia }) {
+        let familia = new Cl_mFamilia({ apellido, cantPersonas, dia })
         this.mCinesUnidos.procesarFamilia(familia)
         this.vCinesUnidos.reportarFamilia({
-            apellidoFamilia: familia.apellidoFamilia,
+            apellido: familia.apellido,
             cantPersonas: familia.cantPersonas,
             dia: familia.dia
         })

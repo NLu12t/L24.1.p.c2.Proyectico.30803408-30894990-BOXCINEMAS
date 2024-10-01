@@ -16,41 +16,35 @@
  * Promedio pagado los días lunes: $3.75
  * Total de dinero al final de la jornada: $134.50
  */
-
 export class Cl_mFamilia {
-    constructor({ apellidoFamilia, cantPersonas, dia }) {
-        this.apellidoFamilia = apellidoFamilia;
-        this.cantPersonas = cantPersonas;
-        this.dia = dia;
+    constructor({ apellido, cantidadPersonas, dia }) {
+        this.apellido = apellido
+        this.cantidadPersonas = cantidadPersonas
+        this.dia = dia
     }
-    set apellidoFamilia(apellidoFamilia) {
-        this._apellidoFamilia = apellidoFamilia;
+    set apellido(apellido) {
+        this._apellido = apellido
     }
-    get apellidoFamilia() {
-        return this._apellidoFamilia;
+    get apellido() {
+        return this._apellido
     }
-    set cantPersonas(cantPersonas) {
-        this._cantPersonas = +cantPersonas;
+    set cantidadPersonas(cantidadPersonas) {
+        this._cantidadPersonas = +cantidadPersonas
     }
-    get cantPersonas() {
-        return this._cantPersonas;
+    get cantidadPersonas() {
+        return this._cantidadPersonas
     }
     set dia(dia) {
-        this._dia = +dia;
+        this._dia = +dia
     }
     get dia() {
-        return this._dia;
-    }
-    calcularPrecioEntrada() {
-        if (this.dia === 1) {
-            return 3/2;
-        }    
-        else {
-            return 3;
-        }
+        return this._dia
     }
     calcularPrecioAPagarPorFamilia(){
-        return this.cantPersonas * this.calcularPrecioEntrada();
+        if (this.dia === 1) {
+            return this.cantidadPersonas * 1.5
+        }else{
+            return this.cantidadPersonas * 3   //3 es el precio de la entrada 
+        }
     }
 }
-
