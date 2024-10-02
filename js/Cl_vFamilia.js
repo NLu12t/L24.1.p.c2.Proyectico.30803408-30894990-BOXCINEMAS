@@ -1,5 +1,5 @@
 export default class Cl_vFamilia {
-    constructor(controlador){
+    constructor(controlador) {
         this.vista             = document.getElementById("familiaForm")
         this.inApellido        = document.getElementById("familiaForm_inApellido")
         this.inCantidadPersonas= document.getElementById("familiaForm_inCantidadPersonas")
