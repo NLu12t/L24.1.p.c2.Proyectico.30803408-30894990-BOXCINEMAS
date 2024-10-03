@@ -17,22 +17,22 @@
  * Total de dinero al final de la jornada: $134.50
  */
 export class Cl_mFamilia {
-    constructor({ apellido, cantidadPersonas, dia }) {
-        this.apellido = apellido
-        this.cantidadPersonas = cantidadPersonas
+    constructor({ familia, personas, dia }) {
+        this.familia = familia
+        this.personas = personas
         this.dia = dia
     }
-    set apellido(apellido) {
-        this._apellido = apellido
+    set familia(familia) {
+        this._familia = familia
     }
-    get apellido() {
-        return this._apellido
+    get familia() {
+        return this._familia
     }
-    set cantidadPersonas(cantidadPersonas) {
-        this._cantidadPersonas = +cantidadPersonas
+    set personas(personas) {
+        this._personas = +personas
     }
-    get cantidadPersonas() {
-        return this._cantidadPersonas
+    get personas() {
+        return this._personas
     }
     set dia(dia) {
         this._dia = +dia
@@ -40,11 +40,12 @@ export class Cl_mFamilia {
     get dia() {
         return this._dia
     }
-    calcularPrecioAPagarPorFamilia(){
-        if (this.dia === 1) {
-            return this.cantidadPersonas * 1.5
-        }else{
-            return this.cantidadPersonas * 3   //3 es el precio de la entrada 
+    calcularPrecioAPagarPorFamilia() {
+       if ( this.dia === 1 ) {
+           return this.personas * 1.5
+       }
+        else {
+           return this.personas * 3   //3 es el precio de la entrada general
         }
     }
 }

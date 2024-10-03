@@ -1,32 +1,34 @@
 export default class Cl_mCinesUnidos {
     constuctor (){
-        this.cntDiaLunes = 0
-        this.acMontoTotal = 100
+        this.caja         = 100         //caja inicial de $100
+        this.acMontoTotal = 0
         this.acMontoPagadoLosLunes = 0
-        this.mayor = 0
-        this.auxApellido = ''
+        this.cntDiaLunes = 0
+        this.mayor       = 0
+        this.mayApellido = ''
     }
-    procesarFamilia(familia){
+    procesarFamilia( f ) {
         //ac monto total
-        this.acMontoTotal += familia.calcularPrecioAPagarPorFamilia()
+        this.acMontoTotal  +=  f.calcularPrecioAPagarPorFamilia()
         //contamos y acumulamos familias y montos pagados el dia lunes
-        if(familia.dia === 1)
-            this.acMontoPagadoLosLunes += familia.calcularPrecioAPagarPorFamilia()
+        if( f.dia === 1 ){
+            this.acMontoPagadoLosLunes  +=  f.calcularPrecioAPagarPorFamilia()
             this.cntDiaLunes ++ 
+        }
         //calc familia que mas pago
-        if (familia.calcularPrecioAPagarPorFamilia() > mayor) {
-            this.mayor = calcularPrecioAPagarPorFamilia()
-            familia.apellido = this.auxApellido
+        if ( f.calcularPrecioAPagarPorFamilia() > this.mayor ){
+            this.mayor = f.calcularPrecioAPagarPorFamilia()
+            f.familia  = this.mayApellido
         }
     }
     FamiliaQueMasPaga() {
-        return this.auxApellido
+        return this.mayApellido
     }
     //calculamos el promedio vendido el dia lunes
     promedioPagadoLosLunes() {
         return this.acMontoPagadoLosLunes / this.cntDiaLunes
     }
     IngresoTotal() {
-        return this.acMontoTotal
+        return this.acMontoTotal + this.caja
     }
 }

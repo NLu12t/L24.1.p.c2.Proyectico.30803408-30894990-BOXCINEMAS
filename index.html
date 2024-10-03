@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>BOXCINEMAS</title>
+    <title>   BOXCINEMAS  </title>
     <link rel="stylesheet" href="styles.css" />
 </head>
   <body>
+
     <section id="mainForm">
-        <h3>BOXCINEMAS</h3>
+        <h3>  BOXCINEMAS  </h3>
+        <h5>Cantidad de dinero en caja:$ <span id="mainForm_lblSaldoEnCaja">?</span></h5>
         <table id="mainForm_tabla">
           <tr>
             <th>Familia</th>
@@ -18,22 +19,21 @@
             <th>Monto a pagar</th>
           </tr>
         </table>
-        <h5>Cantidad de dinero en caja:$ <span id="mainForm_lblCaja">?</span></h5>
         <h5>Familia que pago mas: <span id="mainForm_lblCalcFamiliaMasPaga">?</span></h5>
         <h5>Promedio pagado los dias Lunes:$ <span id="mainForm_lblPromedioPagadoLosLunes">?</span></h5>
         <h5>Total de dinero al final de la jornada:$ <span id="mainForm_lblIngresoTotal">?</span></h5>
-        <button id="mainForm_btAgregarFamilia">AGREGAR</button>
+        <button id="mainForm_btAgregar">AGREGAR</button>
       </section>
     <section id="familiaForm">
-        <h3>Datos de la Familia</h3>
-        <input type="text" id="familiaForm_inApellido" placeholder="Familia"></input>
-        <input type="text" id="familiaForm_inCantidadPersonas" placeholder="Personas"></input>
+        <h3>Datos de la Familia:</h3>
+        <input type="text" id="familiaForm_inFamilia" placeholder="Familia"></input>
+        <input type="text" id="familiaForm_inPersonas" placeholder="Personas"></input>
         <input type="text" id="familiaForm_inDia" placeholder="Dia"></input>
         <button id="familiaForm_btAceptar">ACEPTAR</button>
     </section>    
   </body>
   <script type="module">
-    import {Cl_controlador} from "./js/Cl_controlador.js";
-    new Cl_main()
+    import {Cl_controlador}   from   "./js/Cl_controlador.js"
+    new Cl_controlador()
   </script>
 </html>

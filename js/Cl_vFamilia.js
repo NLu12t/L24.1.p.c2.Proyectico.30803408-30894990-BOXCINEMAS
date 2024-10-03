@@ -1,22 +1,22 @@
 export default class Cl_vFamilia {
-    constructor(controlador) {
-        this.vista             = document.getElementById("familiaForm")
-        this.inApellido        = document.getElementById("familiaForm_inApellido")
-        this.inCantidadPersonas= document.getElementById("familiaForm_inCantidadPersonas")
-        this.inDia             = document.getElementById("familiaForm_inDia")
-        this.btAceptar         = document.getElementById("familiaForm_btAceptar")
-        this.btAceptar.conclick = () =>
+    constructor( controlador ) {
+        this.vista       = document.getElementById("familiaForm")
+        this.inFamilia   = document.getElementById("familiaForm_inFamilia")
+        this.inPersonas  = document.getElementById("familiaForm_inPersonas")
+        this.inDia       = document.getElementById("familiaForm_inDia")
+        this.btAceptar   = document.getElementById("familiaForm_btAceptar")
+          this.btAceptar.onclick = () =>
             controlador.agregarFamilia({
-                apellido:        this.inApellido.value,
-                cantidadPersonas:this.inCantidadPersonas.value,
-                dia:             this.inDia.value,
+                familia:    this.inFamilia.value,
+                personas:   this.inPersonas.value,
+                dia:        this.inDia.value,
             })
-        this.ocultar()
+          this.ocultar()
     }
     mostrar() {
-        this.vista.hidden = false;
+        this.vista.hidden = false
     }
     ocultar() {
-        this.vista.hidden = true;
+        this.vista.hidden = true
     }
 }
