@@ -16,36 +16,44 @@
  * Promedio pagado los días lunes: $3.75
  * Total de dinero al final de la jornada: $134.50
  */
-export class Cl_mFamilia {
-    constructor({ familia, personas, dia }) {
-        this.familia = familia
-        this.personas = personas
-        this.dia = dia
+export default class Cl_mFamilia {
+    constructor({ cajaInicial, familia, personas, dia }) {
+        this.cajaInicial = cajaInicial;
+        this.familia = familia;
+        this.personas = personas;
+        this.dia = dia; 
+    }
+        //metodos de acceso 
+    set cajaInicial(cajaInicial) {
+        this._cajaInicial = +cajaInicial
+    }
+    get cajaInicial() {
+        return this._cajaInicial 
     }
     set familia(familia) {
-        this._familia = familia
+        this._familia = familia;
     }
     get familia() {
-        return this._familia
+        return this._familia;
     }
     set personas(personas) {
-        this._personas = +personas
+        this._personas = +personas;
     }
     get personas() {
-        return this._personas
+        return this._personas;
     }
     set dia(dia) {
-        this._dia = +dia
+        this._dia = +dia;
     }
     get dia() {
-        return this._dia
+        return this._dia;
     }
+        //metodos de calculo
     calcularPrecioAPagarPorFamilia() {
-       if ( this.dia === 1 ) {
-           return this.personas * 1.5
-       }
-        else {
-           return this.personas * 3   //3 es el precio de la entrada general
-        }
+      if (this.dia == 1) {
+        return this.personas * 1.5;
+      } else {
+        return this.personas * 3;
+      }
     }
 }
