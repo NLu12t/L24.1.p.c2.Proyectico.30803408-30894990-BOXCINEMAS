@@ -1,6 +1,5 @@
 export default class Cl_mCinesUnidos {
     constructor (){
-        //this.acMontoTotal = 0;
         this.acMontoPagadoLosLunes = 0;
         this.acMonto = 0;
         this.cntDiaLunes = 0;
@@ -22,6 +21,10 @@ export default class Cl_mCinesUnidos {
             this.mayor = f.calcularPrecioAPagarPorFamilia();
             this.mayApellido  = f.familia;
         }
+    }
+    //reportamos la caja
+    caja(){
+        return f.cajaInicial;
     }
     //calculamos la familia que mas paga
     FamiliaQueMasPaga() {
